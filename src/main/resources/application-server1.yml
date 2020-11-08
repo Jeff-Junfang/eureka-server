@@ -1,0 +1,18 @@
+server:
+  # 指定服务器端口
+  port: 8761
+
+eureka:
+  instance:
+    # 指定主机名
+    hostname: eureka-server1
+  # server一定程度上也是client，互为client
+  client:
+    # 表示是否注册自身到eureka服务器，由于eureka-server就是服务器，不需要注册到自己
+    register-with-eureka: false
+    # 是否从eureka上获取注册信息，由于eureka-server就是服务器，不需要从服务（eureka-server）获取注册信息
+    fetch-registry: false
+    # 去（其他）eureka-server地址注册本服务
+    service-url:
+      # 必须是驼峰defaultZone,若有多个eureka-server，使用,隔开：http://eureka-server2:8762/eureka/,http://eureka-server3:8763/eureka/
+      defaultZone: http://eureka-server2:8762/eureka/,http://eureka-server3:8763/eureka/
