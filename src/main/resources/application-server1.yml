@@ -1,5 +1,5 @@
 server:
-  # 指定服务器端口
+  # 指定服务器端口,若eureka-server集群不是部署到同一台服务器，可以与其他eureka-server一致
   port: 8761
 
 eureka:
